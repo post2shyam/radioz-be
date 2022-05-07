@@ -9,10 +9,13 @@ import org.springframework.boot.runApplication
 class YonderradiozApplication
 
 fun main(args: Array<String>) {
-    val springApplication: SpringApplication = SpringApplication(YonderradiozApplication::class.java)
-    val mutableMapOf = mutableMapOf<String, String>()
-    mutableMapOf["server.port"] = System.getenv()["port"].toString()
 
+    val springApplication = SpringApplication(YonderradiozApplication::class.java)
+    val mutableMapOf = mutableMapOf<String, String>()
+    val portNumber = System.getenv()["port"].toString()
+
+    mutableMapOf["server.port"] = "8081" //portNumber
+    println("PortNumber = $portNumber")
     springApplication.setDefaultProperties(mutableMapOf.toMap())
     runApplication<YonderradiozApplication>(*args)
 }
