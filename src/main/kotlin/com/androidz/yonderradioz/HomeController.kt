@@ -14,4 +14,9 @@ class HomeController {
     fun firstStation(): String {
         return "https://0n-90s.radionetz.de/0n-90s.mp3"
     }
+
+    @RequestMapping("/favoritestations")
+    fun favoriteStations(): String {
+        return "array : [https://0n-90s.radionetz.de/0n-90s.mp3,https://0n-90s.radionetz.de/0n-90s.mp3]"
+    }
 }
